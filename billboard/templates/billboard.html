@@ -1,0 +1,82 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <title>Olivia's blog</title>
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/billboard.css' %}">
+
+
+      <link rel="stylesheet" href="../static/css/billboard.css">
+      <script src="https://use.fontawesome.com/60507a3a40.js"></script>
+
+  </head>
+  <body>
+
+<div id="title_of_page">
+    Billboard
+</div>
+
+<div>
+
+    <form id="blogPost" action="{% url 'save_post' %}" method="post">
+
+        {% csrf_token %}
+
+        Title:<br>
+        <input type="text" name="title" id="title">
+        <br>
+        Blog content:<br>
+        <input type="text" name="content" id="content">
+        <br><br>
+        Author:<br>
+        <input type="text" name="author" id="author">
+        <br><br>
+        <button id="submit_btn" type="submit">submit</button>
+
+    </form>
+
+
+
+    <div id="add_btn_border">
+        <button id="add_btn" type="button">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+
+        <button id="close_btn" class="displayBtn" type="button">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+
+
+    </div>
+
+</div>
+
+<div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% for item in posts %}
+                    <div class="post">
+                        <div class="date">
+                            {{ item.created_date }}
+                        </div>
+                          <div class="titles">
+                            {{ item.title }}
+                        </div>
+                        <p>{{ item.text|linebreaksbr }}</p>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src = "../static/js/billboard.js" type="text/javascript"> </script>
+  </body>
+</html>

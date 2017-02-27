@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+
+@media (min-width: 800px) {
+
+    body {
+        text-align: center;
+        padding:3% 20% 3% 20%;
+    }
+
+    #title_of_page {
+        margin-top: 50px;
+        font-size: 40px;
+        font-family: Anton;
+        text-align: center;
+    }
+
+    #blogPost {
+        margin-top: 30px;
+        text-align: center;
+        font-family: Anton;
+        border: 3px #00b7ef;
+        display:none;
+    }
+
+    #close_btn {
+        color: white;
+        background-color: red;
+        radius: 3px;
+        font-size: 16px;
+    }
+
+    #add_btn, #submit_btn {
+        color: white;
+        background-color: #66CDAA;
+        radius: 3px;
+        font-size: 16px;
+    }
+
+    .displayBtn {
+        display: none;
+    }
+
+    #add_btn_border {
+        margin: 10px;
+        text-align: center;
+        border: 1px dashed black;
+        padding: 1% 10% 1% 10%;
+    }
+
+    .post {
+        margin-bottom: 70px;
+}
+    .titles{
+        font-family: Anton;
+        Color: #00b7ef;
+        font-size : 30px;
+
+    }
+
+}
